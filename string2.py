@@ -4,7 +4,7 @@ Kenzie assignment: String2
 """
 # Your name, plus anyone who helped you with this assignment.
 # Give credit where credit is due.
-__author__ = "???"
+__author__ = "Matthew Murphy"
 
 # Copyright 2010 Google Inc.
 # Licensed under the Apache License, Version 2.0
@@ -24,7 +24,12 @@ __author__ = "???"
 
 def verbing(s):
     # your code here
-    return
+    if len(s) > 2:
+        if s.endswith("ing") == True:
+            return s + "ly"
+        else:
+            return s + "ing"
+    return s
 
 
 # E. not_bad
@@ -35,10 +40,15 @@ def verbing(s):
 # Example:
 #   'This dinner is not that bad!' -> 'This dinner is good!'
 
-
+#src w3resource.com
 def not_bad(s):
     # your code here
-    return
+    x = s.find('not')
+    y = s.find('bad')
+    if y > x and x > 0 and y > 0:
+        return s.replace(s[x:(y+3)], 'good')
+    else:
+        return s
 
 
 # F. front_back
@@ -50,10 +60,12 @@ def not_bad(s):
 # Given 2 strings, a and b, return a string of the form:
 #   a-front + b-front + a-back + b-back
 
-
+#src had togo to stackoverflow this one was ridiculous
 def front_back(a, b):
     # your code here
-    return
+    x = (len(a)+1) // 2
+    y = (len(b)+1) // 2
+    return a[:x] + b[:y] + a[x:] + b[y:]
 
 
 # Provided simple test() function used in main() to print
